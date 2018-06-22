@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Header, Segment, Divider, Grid, Image } from 'semantic-ui-react';
-import ReactMarkDown from 'react-markdown';
+// import ReactMarkDown from 'react-markdown';
 import axios from 'axios';
-import dpsLogo from '../images/dpsLogo.svg';
+import beer from '../images/beer.jpg';
 
 class Home extends Component {
   state = { assignmentMarkdown: '' };
@@ -21,12 +21,12 @@ class Home extends Component {
     return(
       <Segment basic>
         <Segment basic textAlign='center'>
-          <Image style={styles.centered} size='tiny' src={dpsLogo} alt='DevPoint Studios Logo' />
-          <Header as='h1' style={styles.header}>DevPoint Studios React Assessment</Header>
+          <Header as='h1' size='huge' color ='brown'> Welcome to Everything Beer!</Header>
+          <Image style={styles.centered} size='large' color='white' src={beer} alt='pic of beer' />
         </Segment>
         <Grid>
           <Grid.Column computer={8} tablet={8} mobile={16}>
-            <Segment inverted>
+            {/* <Segment inverted>
               <Header
                 as='h1'
                 textAlign='center'
@@ -35,10 +35,10 @@ class Home extends Component {
               </Header>
               <Divider />
               <ReactMarkDown source={this.state.assignmentMarkdown} />
-            </Segment>
+            </Segment> */}
           </Grid.Column>
           <Grid.Column computer={8} tablet={8} mobile={16}>
-            <Segment inverted>
+            {/* <Segment inverted>
               <Header
                 as='h1'
                 textAlign='center'
@@ -52,7 +52,7 @@ class Home extends Component {
                 frameBorder={0}
                 src='http://localhost:3001/rails/info/routes'
               />
-            </Segment>
+            </Segment> */}
           </Grid.Column>
         </Grid>
       </Segment>
@@ -65,12 +65,12 @@ const styles = {
     width: '100%',
     height: '100vh'
   },
-  centered: {
-    margin: '0 auto',
-  },
-  header: {
-    color: '#2ecc40'
-  }
+    centered: {
+      margin: '0 auto',
+    },
+  //   header: {
+  //     color: '#white'
+  //   }
 }
 
 export default Home;
