@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import { Header, Segment, Divider, Grid, Image } from 'semantic-ui-react';
 // import ReactMarkDown from 'react-markdown';
-import axios from 'axios';
+// import axios from 'axios';
 import beer from '../images/beer.jpg';
 
 class Home extends Component {
-  state = { assignmentMarkdown: '' };
+  // state = { assignmentMarkdown: '' };
 
-  componentDidMount() {
-    axios.get('/api/assignment_details')
-      .then(res => {
-        this.setState({ assignmentMarkdown: res.data.file })
-      })
-      .catch( error => {
-        console.log(error.response);
-    });
-  }
+  // componentDidMount() {
+  //   axios.get('/api/assignment_details')
+  //     .then(res => {
+  //       this.setState({ assignmentMarkdown: res.data.file })
+  //     })
+  //     .catch( error => {
+  //       console.log(error.response);
+  //   });
+  // }
 
   render() {
     return(
       <Segment basic>
         <Segment basic textAlign='center'>
-          <Header as='h1' size='huge' color ='brown'> Welcome to Everything Beer!</Header>
+          <Header as='h1' size='huge' color ='brown'> Welcome to All Things Beer!</Header>
           <Image style={styles.centered} size='large' color='white' src={beer} alt='pic of beer' />
         </Segment>
         <Grid>
