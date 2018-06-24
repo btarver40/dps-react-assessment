@@ -4,17 +4,24 @@
 import React from 'react'
 import axios from 'axios'
 import { Container, Header, Card, Image, Button } from 'semantic-ui-react';
+// import InfiniteScroll from 'react-infinite-scroller'
 
 class Beers extends React.Component {
   state = {beers: {}, entries: [] }
 
 
   componentDidMount() {
-    axios.get('/api/all_beers')
+    axios.get('/api/all_beers?page=20&per_page=10')
       .then(res => {
         this.setState({beers: res.data, entries: res.data.entries})
       })
   }
+
+  // putting the ?page=20&per_page=5 after my api_all_beers will render
+
+
+
+  
 
   allBeers = () => {
     if (this.state.entries.length > 1) {
@@ -32,6 +39,15 @@ class Beers extends React.Component {
             Here is Beer
           </Button>
         </Card>
+        // <InfiniteScroll
+        //   pageStart={0}
+        //   loadMore={loadFunc}
+        //   hasMore={true || false}
+        //   loader={<div className="loader" key={0}>Loading ...</div>}
+        //   useWindow={false}
+        //   >
+        //   {items}
+        // </InfiniteScroll>
      )
     })
 }}
