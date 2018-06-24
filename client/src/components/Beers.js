@@ -21,6 +21,7 @@ class Beers extends React.Component {
     return this.state.beers.entries.map(beer => {
       return(
         <Card key={beer.id}>
+        <Image src="/Users/biancatarver/Devpoint2018/dps-react-assessment/client/src/images/beer_card.jpg" />
           <Card.Content>
             {beer.name}
           </Card.Content>
