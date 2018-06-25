@@ -17,10 +17,10 @@ class NavBar extends Component {
           </Link>
           <Menu.Menu position='center'>
             <Link to='/beers'>
-              <Menu.Item name='All Beers' />
+              <Menu.Item name='Beers' />
             </Link>
             <Link to='/breweries'>
-              <Menu.Item name='All Breweries' />
+              <Menu.Item name='Breweries' />
             </Link>
           </Menu.Menu>
         </Menu>

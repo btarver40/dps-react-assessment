@@ -37,7 +37,7 @@ class Breweries extends React.Component {
     const {entries} = this.state.breweries;
     return(
       <Container>
-        <Header as="h1" color="brown" textAlign="center">ALL BREWERIES</Header>
+        <Header as="h1" color="brown" textAlign="center">BREWERIES</Header>
           <Card.Group itemsPerRow={3}>
           {this.allBreweries()}
         </Card.Group>

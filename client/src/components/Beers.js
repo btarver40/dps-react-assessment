@@ -1,5 +1,7 @@
 // in this component I need to be able to display all of the beers
 // I need to make an axios get request for all the beers
+// I need to make a function to call in my infinite scroll section?
+// 
 
 import React from 'react'
 import axios from 'axios'
@@ -11,14 +13,20 @@ class Beers extends React.Component {
 
 
   componentDidMount() {
-    axios.get('/api/all_beers?page=20&per_page=10')
+    axios.get('/api/all_beers')
       .then(res => {
         this.setState({beers: res.data, entries: res.data.entries})
       })
   }
 
-  // putting the ?page=20&per_page=5 after my api_all_beers will render
+  // I know I need this function, but I am not sure if this is the correct way of going about it?
+  // loadMore = () => {
+  //   axios.get('/api/all_beers?page=20&per_page=10')
+  //     .then(res => {
+  //       this.setState({beers: res.data, entries: res.data.entries})
+  //     })
 
+  // }
 
 
   
@@ -39,25 +47,26 @@ class Beers extends React.Component {
             Here is Beer
           </Button>
         </Card>
-        // <InfiniteScroll
-        //   pageStart={0}
-        //   loadMore={loadFunc}
-        //   hasMore={true || false}
-        //   loader={<div className="loader" key={0}>Loading ...</div>}
-        //   useWindow={false}
-        //   >
-        //   {items}
-        // </InfiniteScroll>
      )
     })
-}}
-
-
+  }}
+  
+  // NOT QUITE SURE WHERE TO PUT THIS AND WHAT TO PUT IN IT? This is an example from the internet
+  // <InfiniteScroll
+  //   pageStart={0}
+  //   loadMore={loadMore}
+  //   hasMore={true || false}
+  //   loader={<div className="loader" key={0}>Loading ...</div>}
+  //   useWindow={false}
+  //   >
+  //   {items}
+  // </InfiniteScroll>
+  
   render() {
     const {entries} = this.state.beers;
     return(
       <Container>
-        <Header as="h1" color="brown" textAlign="center">ALL BEERS</Header>
+        <Header as="h1" color="brown" textAlign="center">BEERS</Header>
           <Card.Group itemsPerRow={3}>
           {this.allBeers()}
         </Card.Group>
@@ -68,12 +77,3 @@ class Beers extends React.Component {
 
 export default Beers;
 
-      // <ul>
-      //   <h1>ALL BEERS</h1>
-      //   {beers.map (b => 
-      //     <li key={b.id}>
-      //       <Link to={`/beers/${b.id}`}>{b.name}</Link>
-      //     </li>
-      //   )
-      // }
-      // </ul>
